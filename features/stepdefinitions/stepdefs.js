@@ -11,9 +11,9 @@ When('I {}move through lyrics', function(expectedAnswer){
   if(this.userType == "leader"){
     if(expectedAnswer === ""){
       this.actualAnswer = "can";
+    }else{
+      this.actualAnswer = "can't";
     }
-  }else{
-    this.actualAnswer = "can't";
   }
 });
 
@@ -43,3 +43,18 @@ When("I enter a {}link", function(expectedAnswer){
 Then("{} will be displayed", function(expectedAnswer){
   assert.strictEqual(this.isError, expectedAnswer);
 });
+
+/*
+// Feature 3
+Given("I create a room", function(){
+  
+});
+
+When("a room id already exists", function(){
+
+});
+
+Then("the program should prevent me from making the room", function(){
+
+});
+*/
