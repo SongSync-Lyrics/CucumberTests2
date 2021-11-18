@@ -3,4 +3,9 @@ Feature: As a leader, I would like the program to prevent me from creating a roo
     Scenario: I am a leader
         Given I create a room
         When a room id already exists
-        Then the program should prevent me from making the room
+        Then the program "should" prevent me from making the room
+
+    Scenario: I am a leader
+        Given I create a room
+        When a room id non exists
+        Then the program "shouldn't" prevent me from making the room

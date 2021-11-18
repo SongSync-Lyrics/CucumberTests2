@@ -44,17 +44,38 @@ Then("{} will be displayed", function(expectedAnswer){
   assert.strictEqual(this.isError, expectedAnswer);
 });
 
-/*
+
 // Feature 3
 Given("I create a room", function(){
-  
+  this.userType = "leader";
 });
 
-When("a room id already exists", function(){
-
+When("a room id {} exists", function(expectedAnswer){
+  if(expectedAnswer === "already"){
+    this.actualAnswer = "should";
+  }else{
+    this.actualAnswer = "shouldn't";
+  }
 });
 
-Then("the program should prevent me from making the room", function(){
-
+Then("the program {string} prevent me from making the room", function(expectedAnswer){
+  assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
-*/
+
+
+// Feature 4
+Given("I enter a room code", function(){
+  this.temp = "";
+});
+
+When("the room code is {}", function(expectedAnswer){
+  if(expectedAnswer === "wrong"){
+    this.actualAnswer = "tell me it's wrong";
+  }else{
+    this.actualAnswer = "let me into the room";
+  }
+});
+
+Then("the program should {}", function(expectedAnswer){
+  assert.strictEqual(this.actualAnswer, expectedAnswer);
+});
