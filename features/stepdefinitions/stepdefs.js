@@ -113,3 +113,19 @@ When("I want to move the page", function(){
 Then("there {} be icons for me to press to move the page", function(expectedAnswer){
   assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
+
+
+// Feature 7
+Given("I am a follower", function(){
+  this.userType = "follower";
+});
+
+When("the leader moves the lyrics on their device", function(){
+  if(this.userType == "follower"){
+    this.actualAnswer = "move in sync";
+  }
+});
+
+Then("the lyrics will {} with the leader as they move the lyrics", function(expectedAnswer){
+  assert.strictEqual(this.actualAnswer, expectedAnswer);
+});
