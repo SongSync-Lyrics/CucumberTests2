@@ -99,3 +99,17 @@ Then("the lyrics move", function(){
 });
 
 
+// Feature 6
+Given("I am on a mobile device", function(){
+  this.deviceType = "mobile";
+});
+
+When("I want to move the page", function(){
+  if(this.deviceType == "mobile"){
+    this.actualAnswer = "should";
+  }
+});
+
+Then("there {} be icons for me to press to move the page", function(expectedAnswer){
+  assert.strictEqual(this.actualAnswer, expectedAnswer);
+});
