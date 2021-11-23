@@ -3,11 +3,11 @@ const { Given, When, Then } = require("@cucumber/cucumber");
 const exp = require("constants");
 
 // Feature 1 tests
-Given('I am a leader', function(){
-  this.userType = 'leader';
+Given("I am a leader", function(){
+  this.userType = "leader";
 });
 
-When('I {}move through lyrics', function(expectedAnswer){
+When("I {}move through lyrics", function(expectedAnswer){
   if(this.userType == "leader"){
     if(expectedAnswer === ""){
       this.actualAnswer = "can";
@@ -17,7 +17,7 @@ When('I {}move through lyrics', function(expectedAnswer){
   }
 });
 
-Then('I {} sing while playing', function(expectedAnswer){
+Then("I {} sing while playing", function(expectedAnswer){
   assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
 
@@ -79,3 +79,23 @@ When("the room code is {}", function(expectedAnswer){
 Then("the program should {}", function(expectedAnswer){
   assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
+
+
+// Feature 5
+Given("I{}have a bluetooth pedal", function(expectedAnswer){
+  if(expectedAnswer === " don't "){
+    this.actualAnswer = "scroll the screen";
+  }else{
+    this.actualAnswer = "press it";
+  }
+});
+
+When("I {}", function(expectedAnswer){
+  assert.strictEqual(this.actualAnswer, expectedAnswer);
+});
+
+Then("the lyrics move", function(){
+  this.move = "";
+});
+
+
