@@ -90,7 +90,7 @@ Given("I{}have a bluetooth pedal", function(expectedAnswer){
   }
 });
 
-When("I {}", function(expectedAnswer){
+When("I {string}", function(expectedAnswer){
   assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
 
