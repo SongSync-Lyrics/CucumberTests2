@@ -129,3 +129,27 @@ When("the leader moves the lyrics on their device", function(){
 Then("the lyrics will {} with the leader as they move the lyrics", function(expectedAnswer){
   assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
+
+
+// Feature 8
+Given("I am a {string}", function(expectedAnswer){
+  if(expectedAnswer == "user"){
+    this.userType = "user";
+  }else{
+    this.userType = "developer";
+  }
+});
+
+When("{} a bug", function(expectedAnswer){
+  if(this.userType == "user"){
+    assert.strictEqual("I find", expectedAnswer);
+    this.actualAnswer = "send";
+  }else{
+    assert.strictEqual("a user finds", expectedAnswer);
+    this.actualAnswer = "receive";
+  }
+});
+
+Then("I can {} bug reports", function(expectedAnswer){
+  assert.strictEqual(this.actualAnswer, expectedAnswer);
+});
